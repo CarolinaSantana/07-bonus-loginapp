@@ -1,0 +1,46 @@
+<div class="limiter animated fadeInLeft">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-50 p-b-90">
+            <form (ngSubmit)="login(form)" #form="ngForm" class="login100-form validate-form flex-sb flex-w">
+
+                <span class="login100-form-title p-b-51">
+                    Log In
+                </span>
+
+                <span *ngIf="form.submitted && form.controls['email'].errors" class="text-danger animated fadeIn">Email is required</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="text" name="email" [(ngModel)]="user.email" required email placeholder="Email">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <span *ngIf="form.submitted && form.controls['password'].errors" class="text-danger animated fadeIn">At least 6 characters</span>
+                <div class="wrap-input100 m-b-16" data-validate="Password is required">
+                    <input class="input100" type="password" name="password" [(ngModel)]="user.password" required minlength="6" placeholder="Password">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="flex-sb-m w-full p-t-3 p-b-24">
+                    <div class="contact100-form-checkbox">
+                        <input [(ngModel)]="remember" class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                        <label class="label-checkbox100" for="ckb1">
+                            Remember my username
+                        </label>
+                    </div>
+
+                    <div>
+                        <a routerLink="/registro" class="txt1">
+                            You do not have an account?
+                        </a>
+                    </div>
+                </div>
+
+                <div class="container-login100-form-btn m-t-17">
+                    <button class="login100-form-btn" type="submit">
+                        Log In
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
